@@ -12,43 +12,76 @@
 
 // Exercise 1. Define a function called logGreeting() that prints the string “Hello!” (use console.log). 
 // Underneath the function, write the line of code that runs the function. 
-
+function logGreeting(){
+  console.log("Hello!");
+}
+logGreeting();
 
 // Exercise 2. Define a function called getName() that *returns* a string that is your name. 
 // Remember, this function should return the string -- not print it.
 // Then print your name in the console by passing getName() into the console.log() function. 
-
+function getName(){
+  return "Nasreen";
+}
+console.log(getName());
 
 // Exercise 3. Call a function within a function -- Write a function called logGreeting2() 
 // that prints a full sentence that contains your name: "Hello! My name is <name>."
 // logGreeting2 should call myName() to get your name.
 // Then print your greeting to the console by calling logGreeting2(). 
-
+function logGreeting2(){
+  console.log(`Hello! My name is ${getName()}`);
+}
+logGreeting2();
 
 // Exercise 4. Write a function that takes 3 parameters that are all numbers.
 // The function should return the sum of the 3 numbers.
 // Then write some function calls you would use to test your function.
+function sum(first, second, third){
+  return first + second + third;
+}
+let u = 10, v = 100, w = 1000;
+console.log(`Sum of ${u}, ${v} and ${w} is ${sum(u, v, w)}`);
 
 
 // Exercise 5. Let's say a museum gives a discount for children ages 14 or under, and seniors 65 or older.
 // Write a function that takes in a person's age and returns true if they should get a discount.
 // Otherwise it should return false.
 // Then write some function calls you would use to test your function.
+const checkDiscount = age => (age <= 14) || (age >= 65);
+
+console.log(checkDiscount(50));
+console.log(checkDiscount(70));
+console.log(checkDiscount(14));
+console.log(checkDiscount(65));
+console.log(checkDiscount(0));
+
+/* This function can also be declared as a regular function:
+
+function checkDiscount(age){
+  return (age <= 14 || age >= 65);
+}
+*/
 
 
 // Exercise 6. Write a function that takes 2 parameters -- one number and one string.
 // The function should print the string the given number of times.
 // Then write some function calls you would use to test your function.
-
+const logMultipleTimes = function(word, count){
+  for(let i = 1; i <= count; i++){
+    console.log(word);
+  }
+}
+logMultipleTimes("Bravo!", 5);
 
 // Exercise 7. Read the following code (don't run it yet)
 function mysteryFunction1(p1) {
   return p1 * 2;
 }
 const y = 4;
-const z = mysteryFunction1(y);
-console.log("The value of y is " + y);
-console.log("The value of z is " + z);
+const z = mysteryFunction1(v);
+console.log("The value of y is " + v);
+console.log("The value of z is " + w);
 
 // Without running the code, write down in a comment:
 // 1. What mysteryFunction1 does 
@@ -56,7 +89,13 @@ console.log("The value of z is " + z);
 // 3. What prints out for the value of z
 // Now run the code and see if you're correct.
 // Were you correct? If not, what did you learn?
-
+/*
+ Answers:
+ 1. mysteryFuction1 multiplies the parameter p1 by two, if p1 is a number. And returns the product.
+ If the argument passed as p1 is not a number, it will return a NaN.
+ 2. 4
+ 3. 8 
+*/
 
 
 // Exercise 8. Read the following code (don't run it yet)
@@ -75,7 +114,12 @@ console.log("The value of b is " + b);
 // 3. What prints out for the value of b
 // Now run the code and see if you're correct.
 // Were you correct? If not, what did you learn?
-
+/*
+1. mysteryFunction2 takes two parameters and returns the difference between them, by subtracting the second
+parameter from the first.
+2. 6
+3. 5
+*/
 
 // Exercise 9. This exercise is to practice reading the documentation for functions.
 // String.split() is a function in the JavaScript standard library that you can use in your code.
@@ -85,18 +129,26 @@ console.log("The value of b is " + b);
 // Here's a string I made representing my grocery list.
 // Using split() and groceryList, make an array of my grocery list items
 const groceryList = "eggs,carrots,orange juice"
+const groceryItems = groceryList.split(',');
+for (const item of groceryItems) {
+  console.log(item); 
+}
 
 // Here's a string I made representing my morning schedule.
 // Using split() and mySchedule, make an array of the *first 2* things I do in the morning
 // There are multiple ways to do this, but try doing it using only the split() function.
 const mySchedule = 'wake up--->brush teeth--->eat breakfast--->go to work'
-
+const firstTwoThings = mySchedule.split("--->", 2)
+firstTwoThings.forEach(element => {
+  console.log(element);
+  
+});
 
 
 // Congrats, you made it to the end!
 // Did you find this easy or hard? If you used references, which ones helped you? 
 // Please answer in a comment below.
-//
+//Easy
 
 // Email your file to the course staff, 
 // or commit your file to GitHub and email us a link.
