@@ -104,15 +104,25 @@ document.getElementById("button1").onclick = function() {
 // Exercise 10: Select the elements with the class "myClass" and update the text inside each of them to end with "!"
 // Hint: To operate on multiple elements, you can use a loop.
 
-
+const myClassList = document.getElementsByClassName("myClass");
+for (const item of myClassList) {
+	let content = item.innerHTML;
+	item.innerHTML = content + "!";
+}
 // Exercise 11: Make it so when the button2 is clicked, 
 // the children of the element with id "id1" each have their text replaced with a random number 1-100
-
+document.getElementById("button2").onclick = function(){
+	const childElements = document.getElementById("id1").children;
+	for (const item of childElements) {
+		item.innerHTML = Math.floor((Math.random() * 100 ) + 1);
+	}
+}
 
 // How was this exercise (easy, hard, fun, confusing)?
 // What references did you use to help?
 // Please put your answers in a comment below:
-//
+//I had fun with the excercise. Learned a lot of new things.
+// Stackoverflow, MDN and a bunch of bogs were helpful
 </script>
 
 </html>
