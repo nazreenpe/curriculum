@@ -33,6 +33,7 @@ All of [Good Eggs](https://www.goodeggs.com/)' web services (including shopping,
 
 ### Materials
 
+- [The beginner's guide: Understanding Node.js & Express.js fundamentals](https://medium.com/@LindaVivah/the-beginners-guide-understanding-node-js-express-js-fundamentals-e15493462be1)
 - [Node.js official page](https://nodejs.org/en/about/)
 - [NodeJS Tutorial for Absolute Beginners](https://youtu.be/U8XF6AFGqlc)
 
